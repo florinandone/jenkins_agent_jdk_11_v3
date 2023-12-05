@@ -7,9 +7,7 @@ RUN yum -y install java-11-openjdk
 RUN yum -y install java-11-openjdk-devel
 RUN yum -y install net-tools
 
-RUN yum -y groupinstall "Development Tools"
-RUN dnf makecache
-RUN dnf install libpcap.x86_64
+RUN yum -y install libpcap
 
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 
