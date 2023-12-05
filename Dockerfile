@@ -5,6 +5,7 @@ FROM oraclelinux:8.5
 RUN yum -y update
 RUN yum -y install java-11-openjdk 
 RUN yum -y install java-11-openjdk-devel
+RUN yum -y install tzdata-java
 RUN yum -y install net-tools
 
 RUN yum -y install libpcap
