@@ -3,13 +3,17 @@
 FROM oraclelinux:8.5
 
 RUN yum -y update
+
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+RUN chmod +x ./kubectl
+RUN mv ./kubectl /usr/local/bin
+
 RUN yum -y install java-11-openjdk 
 RUN yum -y install java-11-openjdk-devel
 RUN yum -y install tzdata-java
 RUN yum -y install net-tools
 RUN yum -y install lsof
 RUN yum -y install libpcap
-RUN yum -y install kubectl
 
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 
