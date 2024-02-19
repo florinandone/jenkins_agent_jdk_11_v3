@@ -6,7 +6,7 @@ RUN yum -y update
 
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 RUN chmod +x ./kubectl
-RUN mv ./kubectl /usr/local/bin
+RUN mv ./kubectl /usr/bin
 
 RUN yum -y install java-11-openjdk 
 RUN yum -y install java-11-openjdk-devel
